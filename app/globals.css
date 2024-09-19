@@ -22,3 +22,23 @@ h2 {
 h3 {
   font-family: "Montserrat";
 }
+
+.list {
+  min-height: 45vh;
+}
+
+.form {
+  height: 7vh;
+  width: 50vw;
+}
+
+.header {
+  height: 25vh;
+}
+
+.status {
+  height: 5vh;
+}
+input {
+  color: white;
+}
