@@ -6,18 +6,20 @@ const Form = ({
   quantity,
   setQuantity,
   submitHandler,
-  clearItems, // Receive clearItems as a prop
+  clearItems,
 }) => {
   return (
-    <div className="flex justify-center items-center pr-7">
+    <div className="flex justify-center items-center p-4">
       <form
-        className="form min-w-fit rounded-lg flex justify-evenly items-center gap-5 bg-yellow-300"
+        className="form w-full max-w-4xl rounded-lg flex flex-wrap justify-evenly items-center gap-4 bg-yellow-300 p-4"
         onSubmit={submitHandler}
       >
-        <div>
-          <span className="text-white text-lg font-bold">Quantity : </span>
+        <div className="flex items-center gap-2">
+          <span className="text-white text-base sm:text-lg font-bold">
+            Quantity :
+          </span>
           <select
-            className="h-8 w-14 rounded text-black text-1xl font-bold"
+            className="h-8 w-16 sm:w-20 rounded text-black text-base font-bold"
             value={quantity}
             onChange={(e) => setQuantity(Number(e.target.value))}
           >
@@ -29,22 +31,22 @@ const Form = ({
           </select>
         </div>
         <input
-          className="h-8 w-56 bg-gray-900 rounded px-3"
+          className="h-8 w-full sm:w-56 bg-gray-900 rounded px-3 text-white"
           type="text"
           placeholder="Enter Items"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
         <button
-          className="bg-blue-400 h-8 w-20 rounded text-1xl font-bold"
+          className="bg-blue-400 h-8 w-24 rounded text-base font-bold"
           type="submit"
         >
           ADD
         </button>
         <button
-          className="bg-red-400 h-8 w-20 rounded text-1xl font-bold"
-          type="button" // Prevents form submission
-          onClick={clearItems} // Calls clearItems function
+          className="bg-red-400 h-8 w-24 rounded text-base font-bold"
+          type="button"
+          onClick={clearItems}
         >
           CLEAR
         </button>

@@ -8,13 +8,13 @@ const ItemsList = ({ items, togglePacked }) => {
           style={
             item.packed ? { textDecoration: "line-through", color: "gray" } : {}
           }
-          className="text-lg font-bold text-black "
+          className="text-base sm:text-lg font-bold text-black break-words"
         >
           {item.quantity} {item.description}
         </span>
         <button
           onClick={() => togglePacked(item.id)}
-          className="ml-4 text-red-600 hover:text-red-800 transition-colors"
+          className="ml-2 sm:ml-4 text-red-600 hover:text-red-800 transition-colors"
         >
           ❌
         </button>
@@ -23,7 +23,7 @@ const ItemsList = ({ items, togglePacked }) => {
   }
 
   return (
-    <div className="list max-w-6xl mx-auto my-5 p-4 ">
+    <div className="list w-full max-w-6xl mx-auto my-5 p-4">
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {items.map((item) => (
           <li key={item.id}>

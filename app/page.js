@@ -31,16 +31,16 @@ const Page = () => {
   };
 
   const clearItems = () => {
-    setItems([]); // This should clear the items
-    setDescription(""); // Clear the description input
-    setQuantity(1); // Reset quantity to 1
+    setItems([]);
+    setDescription("");
+    setQuantity(1);
   };
 
   const totalItems = items.length;
   const packedItems = items.filter((item) => item.packed).length;
 
   return (
-    <>
+    <main className="flex flex-col items-center w-full">
       <Header />
       <Form
         description={description}
@@ -48,11 +48,11 @@ const Page = () => {
         setQuantity={setQuantity}
         quantity={quantity}
         submitHandler={submitHandler}
-        clearItems={clearItems} // Pass the clear function
+        clearItems={clearItems}
       />
       <ItemsList items={items} togglePacked={togglePacked} />
       <Status totalItems={totalItems} packedItems={packedItems} />
-    </>
+    </main>
   );
 };
 
